@@ -1,12 +1,16 @@
 'use strict'
 
-/**
- * static files (404.html, sw.js, conf.js)
- */
-const ASSET_URL = 'https://hunshcn.github.io/gh-proxy/'
-// 前缀，如果自定义路由为example.com/gh/*，将PREFIX改为 '/gh/'，注意，少一个杠都会错！
+// GitHub: https://github.com/xyz8848/gh-proxy
+
+// static files (404.html, sw.js, conf.js)
+const ASSET_URL = 'https://xyz8848.github.io/gh-proxy/'
+
+// Prefix, if the custom route is 'example.com/gh/', change the prefix to '/gh/'
+// 前缀，如果自定义路由为“example.com/gh/”，将PREFIX改为 '/gh/'
 const PREFIX = '/'
-// 分支文件使用jsDelivr镜像的开关，0为关闭，默认开启
+
+// The branch file uses the switch of jsdelivr. 0 is off and 1 is on
+// 分支文件使用JSDelivr的开关，0为关闭，1为开启
 const Config = {
     jsdelivr: 1
 }
@@ -79,7 +83,8 @@ async function fetchHandler(e) {
     if (path) {
         return Response.redirect('https://' + urlObj.host + PREFIX + path, 301)
     }
-    // cfworker 会把路径中的 `//` 合并成 `/`
+    // Cloudflare workers will change '//' in the path to '/'
+    // Cloudflare workers 会把路径中的 '//' 合并成 '/'
     path = urlObj.href.substr(urlObj.origin.length + PREFIX.length).replace(/^https?:\/+/, 'https://')
     if (path.search(exp1) === 0 || path.search(exp5) === 0 || path.search(exp6) === 0 || path.search(exp3) === 0 || path.search(exp4) === 0) {
         return httpHandler(req, path)
@@ -166,4 +171,4 @@ async function proxy(urlObj, reqInit) {
         headers: resHdrNew,
     })
 }
-
+// GitHub: https://github.com/xyz8848/gh-proxy
