@@ -1,5 +1,5 @@
 # gh-proxy
-> GitHub proxy based on cloudflare
+> GitHub proxy based on Cloudflare Workers
 
 ## Demo(coming soon)
 
@@ -16,7 +16,7 @@
 - https://github.com/{username}/{repositories}/blob/{branches}/{file}
 
 ## Notice
-Cloudflare workers only provide 100000 requests per day
+Cloudflare Workers only provide 100000 requests per day
 
 ## Thanks for...
 [https://github.com/hunshcn](https://github.com/hunshcn)
