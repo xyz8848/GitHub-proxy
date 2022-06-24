@@ -1,5 +1,5 @@
 # gh-proxy
-> GitHub proxy
+> GitHub proxy based on cloudflare
 
 ## Demo(coming soon)
 
@@ -10,7 +10,7 @@
 4. Click `Create a Worker`
 5. Copy [index.js](index.js) to the left code box，`Save and deploy`
 
-## Legal input
+## Correct input
 - https://github.com/{username}/{repositories}/archive/{file}
 - https://github.com/{username}/{repositories}/releases/download/{tag}/{file}
 - https://github.com/{username}/{repositories}/blob/{branches}/{file}
