@@ -17,3 +17,6 @@
 
 ## Notice
 Cloudflare workers only provide 100000 requests per day
+
+## Thanks for...
+[https://github.com/hunshcn](https://github.com/hunshcn)
