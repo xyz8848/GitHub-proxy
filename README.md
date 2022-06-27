@@ -1,7 +1,9 @@
 # gh-proxy
 > GitHub proxy based on Cloudflare Workers
 
-## Demo(coming soon)
+## Demo
+
+[https://gh.dlproxy.eu.org/](https://gh.dlproxy.eu.org/)
 
 ## How to deploy
 1. Go to [Cloudflare Workers](https://workers.cloudflare.com)
