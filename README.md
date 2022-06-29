@@ -21,4 +21,4 @@
 Cloudflare Workers only provide 100000 requests per day
 
 ## Thanks for...
-[https://github.com/hunshcn](https://github.com/hunshcn)
+[https://github.com/hunshcn/gh-proxy](https://github.com/hunshcn/gh-proxy)
