@@ -3,7 +3,7 @@
 // GitHub: https://github.com/xyz8848/gh-proxy
 
 // static files (404.html, sw.js, conf.js)
-const ASSET_URL = 'https://asset.gh.dlproxy.eu.org/'
+const ASSET_URL = 'https://xyz8848.github.io/GitHub-proxy/'
 
 // Prefix, if the custom route is 'example.com/gh/', change the prefix to '/gh/'
 // 前缀，如果自定义路由为“example.com/gh/”，将PREFIX改为 '/gh/'
