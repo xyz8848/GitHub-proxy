@@ -1,4 +1,4 @@
-# GitHub-proxy
+# GitHub Proxy
 > GitHub proxy based on Cloudflare Workers
 
 ## Demo
