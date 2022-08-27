@@ -1,6 +1,6 @@
 'use strict'
 
-// GitHub: https://github.com/xyz8848/gh-proxy
+// GitHub: https://github.com/xyz8848/GitHub-Proxy
 
 // static files (404.html, sw.js, conf.js)
 const ASSET_URL = 'https://xyz8848.github.io/GitHub-Proxy/'
@@ -9,11 +9,15 @@ const ASSET_URL = 'https://xyz8848.github.io/GitHub-Proxy/'
 // 前缀，如果自定义路由为“example.com/gh/”，将PREFIX改为 '/gh/'
 const PREFIX = '/'
 
-// The branch file uses the switch of jsdelivr. 0 is off and 1 is on
+// The branch file uses the switch of JSDelivr. 0 is off and 1 is on
 // 分支文件使用JSDelivr的开关，0为关闭，1为开启
 const Config = {
-    jsdelivr: 1
+    jsdelivr: 0
 }
+
+// White list, only those with characters in the path can pass, e.g. ['/ username /']
+// 白名单，路径里面有包含字符的才会通过，e.g. ['/username/']
+const whiteList = []
 
 /** @type {RequestInit} */
 const PREFLIGHT_INIT = {
@@ -122,6 +126,16 @@ function httpHandler(req, pathname) {
     const reqHdrNew = new Headers(reqHdrRaw)
 
     let urlStr = pathname
+    let flag = !Boolean(whiteList.length)
+    for (let i of whiteList) {
+        if (urlStr.includes(i)) {
+            flag = true
+            break
+        }
+    }
+    if (!flag) {
+        return new Response("blocked", {status: 403})
+    }
     if (urlStr.startsWith('github')) {
         urlStr = 'https://' + urlStr
     }
@@ -171,4 +185,3 @@ async function proxy(urlObj, reqInit) {
         headers: resHdrNew,
     })
 }
-// GitHub: https://github.com/xyz8848/gh-proxy
